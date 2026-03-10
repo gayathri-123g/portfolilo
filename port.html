@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gayathri - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        /* Navigation */
+        nav {
+            background: #fff;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+
+        nav .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+          }
+	.hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        } 
+        .btn-primary {
+            background: white;
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #2563eb;
+        }
+        .btn-third{
+    	    background: transparent;
+            color: white;
+            border: 2px solid white
+ 	    justify-content: center;
+		}
+    	.btn-third:hover{
+   		background: white;
+                color: #2563eb;
+		}
+
+        /* Section Styling */
+        section {
+            padding: 4rem 0;
+            background: white;
+            margin: 2rem 0;
+            border-radius: 10px;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #1e40af;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        .profile-pic {
+            width: 100%;
+            max-width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category h3 {
+            color: #2563eb;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 0.5rem 0;
+            background: #f0f4ff;
+            padding: 0.5rem 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 5px;
+            border-left: 3px solid #2563eb;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            border: 2px solid #e5e7eb;
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: #2563eb;
+        }
+
+        .project-card h3 {
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .tech-tag {
+            background: #2563eb;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .project-links a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .project-links a:hover {
+            color: #1e40af;
+        }
+
+        /* Education Section */
+        .education-item {
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-left: 4px solid #2563eb;
+            margin-bottom: 1.5rem;
+            border-radius: 5px;
+        }
+
+        .education-item h3 {
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-item .meta {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            text-align: center;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .contact-links a:hover {
+            color: #1e40af;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e40af;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            section {
+                margin: 1rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Chittibomma Gayathri Sai priya</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Chittibomma Gayathri Sai Priya</h1>
+        <p class="title">B.Tech Student | Full Stack Developer | Problem Solver</p>
+        <p>Building cool stuff with code. Currently learning and growing every day.</p>
+        <div class="cta-buttons">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            <a  href="C:\Users\HP\OneDrive\Desktop\Portfolio\assets\Resume.pdf" class="btn-third">Download CV</a>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hi! I'm a B.Tech student passionate about web development and problem-solving. I love building applications that solve real-world problems.</p>
+                    <p>When I'm not coding, you'll find me exploring new technologies, contributing to open source, or learning something new.</p>
+                    <p>I'm always open to collaborations and learning opportunities. Let's build something amazing together!</p>
+                </div>
+                <div class="about-image">
+                         <img src="C:\Users\HP\OneDrive\Desktop\Portfolio\assets\dp.jpg" alt="dp" class="profile-pic">
+		</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>Basic JavaScript </li>
+                        <li>Java</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <ul>
+                        <li>React.js</li>
+                        <li>HTML/CSS</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <ul>
+                        <li>Node.js</li>
+                        <li>MongoDB</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Platforms</h3>
+                    <ul>
+                        <li>Git/GitHub</li>
+                        <li>VS Code</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Blood Bank Management System</h3>
+                    <p>Built a machine learning tool to detect and visulaize real-time anomalies.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Django framework</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#">https://github.com/gayathri-123g</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Captcha Generator</h3>
+                    <p>Built a python-based CAPTCHA generator for web forms using py and random libraries to ensure secure user verification.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#">https://github.com/gayathri-123g</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Mental Health Risk Assessment Using NLP on Social Media Posts</h3>
+                    <p>Develop an automated context aware NLP model capable of detecting mental-health risk indicators .</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">python</span>
+                        <span class="tech-tag">ML  </span>
+                        <span class="tech-tag">NLP Techniques</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>Bachelor of Technology (B.Tech)</h3>
+                <p class="meta">B V Raju Institute of Technology| Expected Graduation: 2027</p>
+                <p><strong>Branch:</strong> Computer Science & Business System Engineering</p>
+                <p><strong>CGPA:</strong> 8.8/10</p>
+                <p><strong>Relevant Coursework:</strong> Java ,Web Development, Database Management.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <p>I'm always interested in hearing about new projects and opportunities.</p>
+                <div class="contact-links">
+                    <a href="mailto:chittibommagayathrisaipriya@gmail">📧 Email</a>
+                    <a href="https://linkedin.com/in/ch-gayathri-sai-priya-gsp" target="_blank">💼 LinkedIn</a>
+                    <a href="https://github.com/gayathri-123g" target="_blank">🐙 GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2027 Your ch.gayathri. All rights reserved.</p>
+    </footer>
+</body>
+</html>
